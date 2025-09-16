@@ -1,17 +1,36 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-const heading = React.createElement('div', { id: 'parent' }, [
-  React.createElement('div', { id: 'child' }, [
-    React.createElement('h1', {}, "I'm an h1 tag"),
-    React.createElement('h2', {}, "I'm an h2 tag"),
-  ]),
-  React.createElement('div', { id: 'child2' }, [
-    React.createElement('h1', {}, "I'm an h1 tag"),
-    React.createElement('h2', {}, "I'm an h2 tag"),
-  ]),
-]);
+// React Element
 
-const root = ReactDOM.createRoot(document.getElementById('root')); // everything is rendered in the root
+// const heading = React.createElement('h1', { id: 'heading' }, 'Namaste React');
 
-root.render(heading);
+// React Element
+// JSX - HTML or XML like syntax
+
+const elem = <span>React Element</span>;
+
+const Title = () => (
+  <h1 className="head" tabIndex="5">
+    {elem}
+    Namaste React using JSX
+  </h1>
+);
+
+// React Component
+// Class based component - old
+// Functional component - new
+
+const amount = 10000;
+const HeadingComponent = () => (
+  <div className="container">
+    {Title()}
+    <Title />
+    <Title></Title>
+    <h1 className="heading">Namaste React Functional Component</h1>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+root.render(<HeadingComponent />);
